@@ -16,7 +16,7 @@ import support.BaseStep;
 import support.DriverFactory;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ResumoMensalSteps extends BaseStep {
+public class ResumoMensalSteps {
 	
 	MenuPage menuPage = new MenuPage();
 	ResumoMensalPage resumPage = new ResumoMensalPage();

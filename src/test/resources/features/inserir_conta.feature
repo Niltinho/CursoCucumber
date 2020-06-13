@@ -1,19 +1,17 @@
-#language: pt
+#language: en
 @funcionais
-Funcionalidade: Cadastro de contas
+Feature: Cadastro de contas
 	Como um usuario 
 	Gostaria de cadastrar contas
 	Para que eu possa distribuir meu dinheiro de uma forma mais organizada
 	
-Contexto:
-	Dado que desejo adicionar uma conta
+Scenario Outline: Deve validar regras cadastro contas
+	Given que desejo adicionar uma conta
+	When adiciono a conta "<conta>"
+	Then recebo a mensagem de insercao "<mensagem>"
 	
-Esquema do Cenário: Deve validar regras cadastro contas
-	Quando adiciono a conta Conta de Teste
-	Então recebo a mensagem Conta adicionada com sucesso!
-	
-Exemplos:
+Examples:
    | conta 						| mensagem 														| 
-   | Conta de Teste 	| Conta adicionada com sucesso! 			|
+   | NiltonTeste 			| Conta adicionada com sucesso! 			|
    |    							| Informe o nome da conta 						|
    | Conta mesmo nome | Ja existe uma conta com esse nome! 	|

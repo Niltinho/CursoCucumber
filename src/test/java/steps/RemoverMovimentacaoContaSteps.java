@@ -8,7 +8,7 @@ import pages.ContaPage;
 import pages.MenuPage;
 import support.BaseStep;
 
-public class RemoverMovimentacaoContaSteps extends BaseStep {
+public class RemoverMovimentacaoContaSteps {
 	
 	MenuPage menuPage = new MenuPage();
 	ContaPage contaPage = new ContaPage();

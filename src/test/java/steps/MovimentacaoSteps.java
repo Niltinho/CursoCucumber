@@ -15,7 +15,7 @@ import support.BaseStep;
 import support.DataUtils;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MovimentacaoSteps extends BaseStep {
+public class MovimentacaoSteps {
 	
 	private MenuPage menuPage = new MenuPage();
 	private MovimentacaoPage movimentacaoPage = new MovimentacaoPage();

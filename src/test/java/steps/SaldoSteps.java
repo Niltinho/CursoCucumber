@@ -8,7 +8,7 @@ import pages.HomePage;
 import pages.MenuPage;
 import support.BaseStep;
 
-public class SaldoSteps extends BaseStep {
+public class SaldoSteps {
 	
 	MenuPage page = new MenuPage();
 	HomePage homePage = new HomePage();

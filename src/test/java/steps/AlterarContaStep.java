@@ -1,5 +1,4 @@
 package steps;
-
 import java.io.File;
 
 import org.junit.Assert;
@@ -17,31 +16,33 @@ import support.Generator;
 import support.Propriedades;
 import support.Screenshot;
 
-public class InserirContasSteps {
+public class AlterarContaStep {
 	
 	private LoginPage page = new LoginPage();
 	private MenuPage menuPage = new MenuPage();
 	private ContaPage contaPage = new ContaPage();
 	
-	@Dado("que desejo adicionar uma conta")
-	public void queDesejoAdicionarUmaConta() throws Throwable {
+	@Dado("que desejo alterar a conta {string}")
+	public void queDesejoAdicionarUmaConta(String conta) throws Throwable {
 		page.acessarTelaInicial();
 		page.setEmail("nilton01@teste.com");
 		page.setPassword("niltonteste");
 		page.clicarBotaoEntrar();
 		
-		menuPage.acessarTelaAdicionarConta();
+		menuPage.acessarTelaListarConta();
+		
+		contaPage.clicarBotaoAlterar(conta);
 	}
 
-	@Quando("adiciono a conta {string}")
+	@Quando("altero a conta {string}")
 	public void adicionoAConta(String conta) throws Throwable {
 		contaPage.setConta(conta);
 		contaPage.clicarBotaoSalvar();
 	}
 
-	@Então("recebo a mensagem de insercao {string}")
+	@Então("recebo a mensagem de alteracao {string}")
 	public void receboAMensagem(String mensagem) throws Throwable {
-	    Assert.assertEquals(mensagem, contaPage.obterMensagem());
+		Assert.assertEquals(mensagem, contaPage.obterMensagem());
 	}
 	
 	@After(order = 1, value = "@funcionais")

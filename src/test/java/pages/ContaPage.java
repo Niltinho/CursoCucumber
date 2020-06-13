@@ -24,12 +24,16 @@ public class ContaPage extends BasePage {
 	}
 	
 	public void clicarBotaoAlterar(String conta) {
-		//clicarBotao(By.xpath("//span[@class='glyphicon glyphicon-edit']"));
-		obterCelula("Conta", conta, "Ações", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
+		clicarBotao(By.xpath("//tr/td[text()='"+conta+"']//..//td//span[@class='glyphicon glyphicon-edit']"));
+		//obterCelula("Conta", conta, "Ações", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
 	}
 	
 	public String obterMensagemErro() {
 		return obterValorCampo(By.xpath("//div[@class='alert alert-danger']"));
+	}
+	
+	public String obterMensagem() {
+		return obterValorCampo(By.xpath("//div[starts-with(@class, 'alert alert-')]"));
 	}
 	
 }
